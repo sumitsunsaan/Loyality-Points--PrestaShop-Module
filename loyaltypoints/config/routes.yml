@@ -1,0 +1,26 @@
+loyaltypoints_admin_config:
+    path: /loyaltypoints/configure
+    methods: [GET, POST]
+    defaults:
+        _controller: 'YourCompany\LoyaltyPoints\Controller\Admin\ConfigureController::indexAction'
+    requirements:
+        _legacy_controller: 'AdminModules'
+        _legacy_param: 'configure=loyaltypoints'
+
+loyaltypoints_dashboard:
+    path: /loyaltypoints/dashboard
+    methods: [GET]
+    defaults:
+        _controller: 'YourCompany\LoyaltyPoints\Controller\Front\DashboardController::indexAction'
+
+loyaltypoints_transfer:
+    path: /loyaltypoints/transfer
+    methods: [POST]
+    defaults:
+        _controller: 'YourCompany\LoyaltyPoints\Controller\Front\TransferController::processAction'
+
+loyaltypoints_social_track:
+    path: /loyaltypoints/social
+    methods: [POST]
+    defaults:
+        _controller: 'YourCompany\LoyaltyPoints\Controller\Front\SocialShareController::trackShareAction'

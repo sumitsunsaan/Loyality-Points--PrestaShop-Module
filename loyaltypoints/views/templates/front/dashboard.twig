@@ -1,0 +1,43 @@
+{% extends 'customer/page.html.twig' %}
+
+{% block page_content %}
+<div class="loyalty-dashboard">
+    <h2>{{ 'Your Loyalty Points'|trans({}, 'Modules.Loyaltypoints.Shop') }}</h2>
+    
+    <div class="points-balance">
+        <h3>{{ 'Current Balance'|trans({}, 'Modules.Loyaltypoints.Shop') }}</h3>
+        <div class="balance-value">{{ points }} {{ 'Points'|trans({}, 'Modules.Loyaltypoints.Shop') }}</div>
+    </div>
+
+    <div class="points-transfer">
+        <h3>{{ 'Transfer Points'|trans({}, 'Modules.Loyaltypoints.Shop') }}</h3>
+        {{ render(controller('YourCompany\\LoyaltyPoints\\Controller\\Front\\TransferController::formAction')) }}
+    </div>
+
+    <div class="points-history">
+        <h3>{{ 'Transaction History'|trans({}, 'Modules.Loyaltypoints.Shop') }}</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{ 'Date'|trans({}, 'Modules.Loyaltypoints.Shop') }}</th>
+                    <th>{{ 'Type'|trans({}, 'Modules.Loyaltypoints.Shop') }}</th>
+                    <th>{{ 'Points'|trans({}, 'Modules.Loyaltypoints.Shop') }}</th>
+                    <th>{{ 'Description'|trans({}, 'Modules.Loyaltypoints.Shop') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in history %}
+                <tr>
+                    <td>{{ transaction.date_add|date('Y-m-d H:i') }}</td>
+                    <td>{{ transaction.type|capitalize }}</td>
+                    <td class="{{ transaction.points > 0 ? 'text-success' : 'text-danger' }}">
+                        {{ transaction.points > 0 ? '+' : '' }}{{ transaction.points }}
+                    </td>
+                    <td>{{ transaction.source }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

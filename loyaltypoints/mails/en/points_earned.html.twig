@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Points Earned</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style="font-family: Arial, sans-serif;">
+    <div style="max-width: 600px; margin: 0 auto;">
+        <p>Hello {firstname} {lastname},</p>
+        
+        <p style="font-size: 16px;">
+            You've earned <strong style="color: #28a745;">{points} loyalty points</strong>!
+        </p>
+        
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 5px;">
+            <p><strong>Transaction Details:</strong></p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>Date: {date}</li>
+                <li>Source: {source}</li>
+                <li>Current Balance: {balance} points</li>
+            </ul>
+        </div>
+
+        <p style="margin-top: 20px;">
+            Thank you for your loyalty!<br>
+            <strong>{shop_name}</strong>
+        </p>
+    </div>
+</body>
+</html>

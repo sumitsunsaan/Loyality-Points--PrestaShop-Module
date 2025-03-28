@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  YourCompany\LoyaltyPoints\Service\:
+    resource: '../../src/Service/*'
+  
+  YourCompany\LoyaltyPoints\Controller\:
+    resource: '../../src/Controller/*'
+    tags: ['controller.service_arguments']
+
+  YourCompany\LoyaltyPoints\Repository\PointsRepository:
+    arguments:
+      - '@doctrine.orm.entity_manager'

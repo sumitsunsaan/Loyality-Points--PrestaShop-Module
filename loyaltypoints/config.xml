@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <name>loyaltypoints</name>
+    <displayName><![CDATA[Loyalty Points]]></displayName>
+    <version>1.0.0</version>
+    <description><![CDATA[Advanced loyalty points system with social rewards]]></description>
+    <author><![CDATA[Hastakala Nepal]]></author>
+    <tab><![CDATA[customer_engagement]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+</module>

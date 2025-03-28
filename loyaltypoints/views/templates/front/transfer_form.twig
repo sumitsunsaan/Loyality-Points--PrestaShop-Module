@@ -1,0 +1,46 @@
+<form id="points-transfer-form" method="post" 
+    action="{{ path('loyaltypoints_transfer') }}" 
+    data-refresh-url="{{ path('loyaltypoints_dashboard') }}">
+
+    {# Remove manual CSRF input #}
+    {{ form_start(transferForm) }}
+    
+    <div class="form-group">
+        {{ form_label(transferForm.recipient_email) }}
+        {{ form_widget(transferForm.recipient_email) }}
+    </div>
+    
+    <div class="form-group">
+        {{ form_label(transferForm.points) }}
+        {{ form_widget(transferForm.points) }}
+    </div>
+
+    {{ form_rest(transferForm) }}
+    
+    <button type="submit" class="btn btn-primary">
+        {{ "Transfer Points"|trans({}, 'Modules.Loyaltypoints.Shop') }}
+    </button>
+</form><form id="points-transfer-form" method="post" 
+    action="{{ path('loyaltypoints_transfer') }}" 
+    data-refresh-url="{{ path('loyaltypoints_dashboard') }}">
+    
+    {{ form_start(transferForm) }}
+    
+    <div class="form-group">
+        {{ form_label(transferForm.recipient_email) }}
+        {{ form_widget(transferForm.recipient_email, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(transferForm.points) }}
+        {{ form_widget(transferForm.points, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    {{ form_rest(transferForm) }}
+
+    <button type="submit" class="btn btn-primary">
+        {{ "Transfer Points"|trans({}, 'Modules.Loyaltypoints.Shop') }}
+    </button>
+</form>
+
+<div id="transfer-result"></div>
