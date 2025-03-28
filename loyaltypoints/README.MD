@@ -1,8 +1,6 @@
 
-# Loyalty Points Module for PrestaShop
-
-[![PrestaShop Version](https://img.shields.io/badge/PrestaShop-8.2.0+-green.svg)](https://www.prestashop.com)
-[![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
+# Loyalty Points Module for PrestaShop - Made for Hastakala Nepal Private Limited.
+Feel Free to use it. 
 
 A custom loyalty rewards points system for PrestaShop 8.2.0+ that allows customers to earn and redeem points on purchases.
 
